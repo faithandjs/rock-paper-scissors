@@ -1,0 +1,111 @@
+$ScissorsGradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+$PaperGradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+$RockGradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+$LizardGradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+$SpockGradient: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+$DarkText: hsl(229, 25%, 31%);
+$ScoreText: hsl(229, 64%, 46%);
+$HeaderOutline: hsl(217, 16%, 45%);
+$RadialGradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+$border: 15px solid;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $RadialGradient;
+  margin: 20px;
+  color: #fff;
+  /*height: 92vh;
+  #root {
+    height: -webkit-fill-available;
+  }*/
+  .home {
+    margin:  0 auto;
+    height: -webkit-fill-available;
+    header {
+      max-width: 800px;
+      border: 3px solid $HeaderOutline;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+      }
+      div {
+        width: max-content;
+        height: -webkit-fill-available;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px 40px;
+        span {
+          display: block;
+          text-align: center;
+        }
+        .score {
+          color: $ScoreText;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 18px;
+        }
+        .number {
+          font-size: 60px;
+          font-weight: 700;
+          color: $DarkText;
+        }
+      }
+    }
+    section.choose {
+      position: relative;
+      height: -webkit-fill-available;
+      width: -webkit-fill-available;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icons {
+        position: absolute;
+        div {
+          position: relative;
+          background-color: #fff;
+          width: 123px;
+          height: 123px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: $border palevioletred; //rmove
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .scissors {
+          top: -30px;
+          left: 10px;
+        }
+        .spock {
+          top: 80px;
+          left: -150px;
+        }
+        .paper {
+          border: $border $PaperGradient;
+        }
+        .lizard {
+          left: -100px;
+          top: 10px;
+        }
+        .rock {
+          top: -112px;
+          left: 100px;
+        }
+      }
+    }
+    section.choice {
+    }
+    footer {
+    }
+  }
+}
