@@ -9,7 +9,14 @@ export enum options {
     lizard,
     spock 
 }
+export enum status {
+    WIN = 'you win', 
+    LOSE = 'you lose' ,
+    DRAW = 'draw' 
+}
 export interface contextType {
     settingChoices: (num: number) => void, 
-    choices: choices
+    choices: choices,
+    reset: () => void
+    compute: (action: status) => void
 }

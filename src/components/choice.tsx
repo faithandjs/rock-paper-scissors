@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Wrapper } from "./home";
-import { contextType, options } from "./type";
+import { contextType, options, status } from "./type";
 
 function Choice() {
-  const { choices } = useContext(Wrapper) as contextType;
-  const checkpoint = useRef(false);
-  const [state, setState] = useState<{ yourChoice: any; computerChoice: any }>({
-    yourChoice: "",
-    computerChoice: "",
-  });
-
+  const { choices, reset, compute } = useContext(Wrapper) as contextType;
+  const [statusSet, setStatusSet] = useState(false);
+  const [stat, setStatus] = useState<status | null>(null);
+  const [yourChoice, setYourChoice] = useState<JSX.Element | null>(null);
+  const [computerChoice, setComputerChoice] = useState<JSX.Element | null>(
+    null
+  );
+  const [classes, setClasses] = useState({ you: "you", comp: "computer" });
   const svgSetter = (num: options) => {
-    let choice;
+    let choice: JSX.Element | null = null;
     switch (num) {
       case 1:
         choice = (
@@ -66,19 +67,134 @@ function Choice() {
     }
     return choice;
   };
-  useEffect(() => {
-    if (!checkpoint.current) {
-      let you = svgSetter(choices.you);
-      let comp = svgSetter(choices.computer);
-      setState({ yourChoice: you, computerChoice: comp });
-      checkpoint.current = true;
+
+  const check = (a: options, b: options) => {
+    if (a === 1 && b === 2) {
+      setStatus(status.WIN);
+    } else if (a === 2 && b === 3) {
+      setStatus(status.WIN);
+    } else if (a === 3 && b === 4) {
+      setStatus(status.WIN);
+    } else if (a === 4 && b === 5) {
+      setStatus(status.WIN);
+    } else if (a === 5 && b === 1) {
+      setStatus(status.WIN);
+    } else if (a === 1 && b === 4) {
+      setStatus(status.WIN);
+    } else if (a === 2 && b === 5) {
+      setStatus(status.WIN);
+    } else if (a === 3 && b === 1) {
+      setStatus(status.WIN);
+    } else if (a === 4 && b === 2) {
+      setStatus(status.WIN);
+    } else if (a === 5 && b === 3) {
+      setStatus(status.WIN);
+    } else if (a === 2 && b === 1) {
+      setStatus(status.LOSE);
+    } else if (a === 3 && b === 2) {
+      setStatus(status.LOSE);
+    } else if (a === 4 && b === 3) {
+      setStatus(status.LOSE);
+    } else if (a === 5 && b === 4) {
+      setStatus(status.LOSE);
+    } else if (a === 1 && b === 5) {
+      setStatus(status.LOSE);
+    } else if (a === 4 && b === 1) {
+      setStatus(status.LOSE);
+    } else if (a === 5 && b === 2) {
+      setStatus(status.LOSE);
+    } else if (a === 1 && b === 3) {
+      setStatus(status.LOSE);
+    } else if (a === 2 && b === 4) {
+      setStatus(status.LOSE);
+    } else if (a === 3 && b === 5) {
+      setStatus(status.LOSE);
+    } else if (a === b) {
+      setStatus(status.DRAW);
     }
-  }, []);
+  };
+  const forClases = (a: options) => {
+    let x;
+    switch (a) {
+      case 1:
+        x = "scissors";
+        break;
+      case 2:
+        x = "paper";
+        break;
+      case 3:
+        x = "rock";
+        break;
+      case 4:
+        x = "lizard";
+        break;
+      case 5:
+        x = "spock";
+        break;
+
+      default:
+        break;
+    }
+    return x;
+  };
+  useEffect(() => {
+    const youClass = "you ring " + forClases(choices.you);
+    const compClass = "computer " + forClases(choices.computer);
+
+    setClasses({ ["you"]: youClass, ["comp"]: compClass });
+    setYourChoice(svgSetter(choices.you));
+    setTimeout(() => {
+      setComputerChoice(svgSetter(choices.computer));
+      check(choices.you, choices.computer);
+    }, 1500);
+  }, [choices]);
+  useEffect(() => {
+    setTimeout(() => {
+      setStatusSet(true);
+      console.log(statusSet);
+    }, 2000);
+  }, [statusSet]);
+  useEffect(() => {
+    if (stat !== null && statusSet) {
+      compute(stat);
+    }
+  }, [stat, statusSet]);
+
   return (
     <section className="choice">
-      <div className="you">{state.yourChoice}</div>
-      <div className="status">lost?</div>
-      <div className="computer">{state.computerChoice}</div>
+      <div className="you-box">
+        <div className="picked">you picked</div>
+        <div className="ring3">
+          <div className="ring2">
+            <div className="ring1">
+              <div className={classes.you}>{yourChoice}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {statusSet && (
+        <div className="reset">
+          <span className="status">{stat}</span>
+          <button
+            onClick={() => {
+              reset();
+              setStatusSet(false);
+            }}
+          >
+            play again
+          </button>
+        </div>
+      )}
+      <div className="comp-box">
+        <div className="picked">the house picked</div>
+        <div className="ring3">
+          <div className="ring2">
+            <div className="ring1">
+              <div className={classes.comp}>{computerChoice}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
