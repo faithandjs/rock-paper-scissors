@@ -1,0 +1,131 @@
+@media screen and (max-width: 548px) {
+  body .home {
+    header {
+      height: 115px;
+      margin-bottom: 40px;
+      padding: 5px;
+      svg {
+        position: relative;
+        left: -12px;
+        transform: scale(0.8);
+      }
+      div {
+        height: -webkit-fill-available;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px 30px;
+        .score {
+          font-size: 16px;
+        }
+        .number {
+          font-size: 45px;
+        }
+      }
+    }
+    section {
+      .sc-box,
+      .sp-box,
+      .p-box,
+      .l-box,
+      .r-box {
+        .scissors,
+        .spock,
+        .lizard,
+        .paper,
+        .rock {
+          width: 70px;
+          height: 70px;
+          svg {
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+    section.choose {
+      .pentagon {
+        svg {
+          transform: scale(0.8);
+        }
+      }
+      .icons {
+        .sc-box {
+          top: 180px;
+          // left: 10px;
+        }
+        .sp-box {
+          top: 180px;
+          left: -130px;
+        }
+        .p-box {
+          top: 86px;
+          left: 130px;
+        }
+        .l-box {
+          left: -100px;
+          top: 135px;
+        }
+        .r-box {
+          top: 41px;
+          left: 100px;
+        }
+      }
+    }
+
+    section.choice {
+      display: grid;
+      grid-template-areas:
+        "you . comp"
+        ". resets .";
+      padding: 0 20px;
+      align-items: center;
+      .you-box {
+        grid-area: you;
+      }
+      .comp-box {
+        grid-area: comp;
+      }
+      .reset {
+      }
+      .you-box,
+      .comp-box {
+        .picked {
+          top: unset;
+          font-size: 16px;
+          bottom: -163px;
+          white-space: nowrap;
+          //margin-bottom: unset;
+        }
+      }
+      .ring {////
+        animation: r2 1s infinite, r1 1s infinite, r3 1s 2s infinite;
+      }
+      .you,
+      .computer {
+        top: -163px;
+        transform: translateY(100%);
+      }
+      .temp {
+        width: 94px;
+        height: 94px;
+        border-radius: 50%;
+      }
+      .reset {
+        grid-area: resets;
+        margin-top: 30px !important;
+        .status {
+          font-size: 40px;
+        }
+        button {
+          font-size: 15px;
+        }
+      }
+    }
+    footer .footer-text-box {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+   // box-shadow: ;
+}

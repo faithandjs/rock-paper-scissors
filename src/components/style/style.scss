@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
 $ScissorsGradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 $PaperGradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 $RockGradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
@@ -16,9 +18,10 @@ $border: 12px solid;
 }
 body {
   background: $RadialGradient;
+  font-family: "Barlow Semi Condensed", sans-serif;
   margin: 20px;
   color: #fff;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   //overflow-x: hidden;
   /*height: 92vh;
   #root {
@@ -62,6 +65,49 @@ body {
       }
     }
     section {
+      .sc-box,
+      .sp-box,
+      .p-box,
+      .l-box,
+      .r-box {
+        padding: 12px;
+        position: relative;
+        border-radius: 50%;
+        //border: $border palevioletred; //rmove
+        &:hover {
+          cursor: pointer;
+        }
+        .scissors,
+        .spock,
+        .lizard,
+        .paper,
+        .rock {
+          background-color: #fff;
+          //width: ;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .sc-box {
+        // background: ;
+        background: $ScissorsGradient;
+      }
+      .sp-box {
+        background: $SpockGradient;
+      }
+      .p-box {
+        background: $PaperGradient;
+      }
+      .l-box {
+        background: $LizardGradient;
+      }
+      .r-box {
+        background: $RockGradient;
+      }
     }
     section.choose {
       position: relative;
@@ -73,39 +119,54 @@ body {
       .icons {
         position: absolute;
         top: -200px;
-        div {
-          position: relative;
-          background-color: #fff;
-          width: 119px;
-          height: 119px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          border: $border palevioletred; //rmove
+        //.scissors,.spock,.lizard,.paper,.rock
+        .sc-box,
+        .sp-box,
+        .p-box,
+        .l-box,
+        .r-box {
           &:hover {
             cursor: pointer;
           }
         }
-        .scissors {
+        /* padding: 12px;
+          position: relative;
+          border-radius: 50%;
+          //border: $border palevioletred; //rmove
+          
+          .scissors,
+          .spock,
+          .lizard,
+          .paper,
+          .rock {
+            background-color: #fff;
+            //width: ;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          }
+        }*/
+        .sc-box {
           top: 140px;
           // left: 10px;
         }
-        .spock {
-          top: 120px;
+        .sp-box {
+          top: 140px;
           left: -150px;
         }
-        .paper {
-          border: $border $PaperGradient;
-          top: -9px;
+        .p-box {
+          top: 26px;
           left: 150px;
         }
-        .lizard {
+        .l-box {
           left: -100px;
-          top: 60px;
+          top: 80px;
         }
-        .rock {
-          top: -65.5px;
+        .r-box {
+          top: -34px;
           left: 115px;
         }
       }
@@ -113,60 +174,49 @@ body {
     section.choice {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      //align-items: center;
+      padding: 0 20px;
       .you-box,
       .comp-box {
         position: relative;
         text-align: center;
+        height: -webkit-fill-available;
         .picked {
-          margin-bottom: 20px;
+          margin-bottom: 50px;
           text-transform: uppercase;
           color: #fff;
           font-size: 17px;
           font-weight: 600;
+          position: relative;
+          top: 0;
         }
       }
-      .ring1,
-      .ring2,
-      .ring3 {
-        position: relative;
-
-        border-radius: 50%;
-        width: max-content;
-      }
-      .ring1 {
-        //width: ;
-        border: 30px solid rgba($color: #fff, $alpha: 0.1);
-      }
-      .ring2 {
-        border: 30px solid rgba($color: #fff, $alpha: 0.06);
-      }
-      .ring3 {
-        border: 30px solid rgba($color: #fff, $alpha: 0.04);
+      .ring{
+        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+       // box-shadow:rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px ;
+        // animation:  r2 1s  infinite,r1 1s  infinite,r3 1s 2s infinite;
       }
       .you,
       .computer {
-        background-color: #fff;
-        width: 123px;
-        height: 123px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+        bottom: 0;
+        width: max-content;
+        margin: auto;
+      }
+      .temp{
+        width: 114px;
+        height: 114px;
         border-radius: 50%;
-        border: $border palevioletred;
-      }
-      .reset {
-        span,
-        button {
-          display: block;
-        }
-      }
-      .ring {
+        background-color: $DarkText;
       }
       .reset {
         width: max-content;
         text-transform: uppercase;
         margin: auto 10px;
+        span,
+        button {
+          display: block;
+        }
         .status {
           color: #fff;
           font-size: 50px;
@@ -203,13 +253,14 @@ body {
         width: max-content;
         position: absolute;
         right: 20px;
-       
-      padding: 7px 45px;
-      .text {
-        font-size: 20px;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
+        bottom: 20px;
+
+        padding: 7px 45px;
+        .text {
+          font-size: 20px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
       }
       //.rules-box{display: none;}-plus
       .box-box {
@@ -257,7 +308,33 @@ body {
     }
   }
 }
-@keyframes rings {
-  0% {
+@keyframes r1 {
+  from {
+    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 0px 0px 0px rgb(250, 4, 4);
+  }
+  to {
+    //box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 0px 0px 40px rgba(247, 3, 3, 0.952);
+  }
+}
+@keyframes r2 {
+  from {
+    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.025);
+    box-shadow: 0px 0px 0px 0px rgba(94, 255, 0, 0.966);
+  }
+  to {
+    //box-shadow: 0px 0px 0px 80px rgba(255, 255, 255, 0.025);
+    box-shadow: 0px 0px 0px 80px rgb(24, 250, 3);
+  }
+}
+@keyframes r3 {
+  from {
+    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+    box-shadow: 0px 0px 0px 0px rgb(243, 1, 252);
+  }
+  to {
+    //box-shadow: 0px 0px 0px 120px rgba(255, 255, 255, 0.01);
+    box-shadow: 0px 0px 0px 120px rgba(247, 0, 255, 0.096);
   }
 }

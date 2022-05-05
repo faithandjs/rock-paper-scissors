@@ -2,6 +2,8 @@ import React, { createContext, useMemo, useRef, useState } from "react";
 import Choice from "./choice";
 import Choose from "./choose";
 import "./style/style.scss";
+import "./style/style548.scss";
+
 import { choices, options, contextType, status } from "./type";
 
 export const Wrapper = createContext<contextType | null>(null);
