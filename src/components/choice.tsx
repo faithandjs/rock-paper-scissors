@@ -10,7 +10,6 @@ function Choice() {
   const [computerChoice, setComputerChoice] = useState<JSX.Element | null>(
     null
   );
-  const [classes, setClasses] = useState({ you: "you", comp: "computer" });
   const svgSetter = (num: options) => {
     let choice: JSX.Element | null = null;
     switch (num) {
@@ -132,7 +131,7 @@ function Choice() {
     } else if (a === b) {
       setStatus(status.DRAW);
     }
-  };
+  }; /*
   const forClases = (a: options) => {
     let x;
     switch (a) {
@@ -156,7 +155,7 @@ function Choice() {
         break;
     }
     return x;
-  };
+  };*/
   useEffect(() => {
     setYourChoice(svgSetter(choices.you));
     setTimeout(() => {

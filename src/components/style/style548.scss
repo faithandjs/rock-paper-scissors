@@ -118,47 +118,47 @@
       }
     }*/
     section.choice {
-      height: max-content;
+      // height: max-content;
       display: flex;
       justify-content: space-around;
       position: relative;
       align-items: center;
       padding: 0 20px;
+      min-height: 164px;
       .you-box,
       .comp-box {
-        /*
-        margin-bottom: 30px;
-        margin-top: 20px;*/
         .picked {
-          //margin-bottom: 0;
-          //bottom: -103px;
+          position: relative;
+          top: 0;
+          font-size: smaller;
+          white-space: nowrap;
         }
       }
-      .you,
-      .computer {
-        //top: -103px;
-        //transform: translateY(100%);
-      }
       .temp {
-        width: 94px;
-        height: 94px;
-        border-radius: 50%;
+        width: 84px !important;
+        height: 84px !important;
+      }
+      
+      .ring {
+        animation: rings1 1.4s ease-in infinite;
       }
       .reset {
         position: absolute;
-        top: 173px;
+        top: 183px !important;
         margin-top: 30px !important;
+
         .status {
-          font-size: 40px;
+          font-size: 30px !important;
         }
         button {
-          font-size: 15px;
+          font-size: 10px !important;
+          font-weight: 700;
         }
       }
     }
     footer {
       justify-content: center;
-      margin-top: 165px;
+      margin-top: 155px !important;
     }
   }
 }
@@ -245,16 +245,13 @@
     }
 
     section.choice {
-      height: max-content;
-      display: flex;
-      justify-content: space-around;
+      padding: 0;
+      //justify-content: space-between;
       position: relative;
       align-items: center;
       .you-box,
       .comp-box {
-        /*
-        margin-bottom: 30px;
-        margin-top: 20px;*/
+        height: 100px;
         .picked {
           margin-bottom: 0;
           bottom: -103px;
@@ -271,8 +268,16 @@
         width: 94px;
         height: 94px;
         border-radius: 50%;
+        bottom: -103px;
+      }
+      
+      .ring {
+        animation: rings2 1.4s ease-in infinite;
       }
       .reset {
+       /* display: flex;
+        justify-content: space-around;
+        align-items: center;*/
         position: absolute;
         top: 123px;
         margin-top: 30px !important;
@@ -291,4 +296,51 @@
 }
 //height
 @media screen and (min-height: 670px) {
+}
+@keyframes rings1 {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  } 
+  30% {
+    box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 30px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 30px rgba(255, 255, 255, 0.01);
+  } 
+  60% {
+    box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 65px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 65px rgba(255, 255, 255, 0.01);
+  } 
+
+  100% {
+    box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 65px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 110px rgba(255, 255, 255, 0.01);
+  }
+}
+
+@keyframes rings2 {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  } 
+  30% {
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 20px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 20px rgba(255, 255, 255, 0.01);
+  } 
+  60% {
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.01);
+  } 
+
+  100% {
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 70px rgba(255, 255, 255, 0.01);
+  }
 }

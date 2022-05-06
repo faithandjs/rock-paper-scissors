@@ -11,7 +11,7 @@ function Choose() {
           <path
             fill="none"
             stroke="#000"
-            stroke-width="15"
+            strokeWidth="15"
             d="M164.5 9.27L9.26 122.06l59.296 182.495h191.888L319.74 122.06 164.5 9.271z"
             opacity=".2"
           />
