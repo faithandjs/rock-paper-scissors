@@ -194,7 +194,7 @@ function Choice() {
   return (
     <section className="choice">
       <div className="you-box">
-        <div className="picked">you picked</div>
+        <div className="picked">you picked </div>
 
         <div className="you">{yourChoice}</div>
       </div>

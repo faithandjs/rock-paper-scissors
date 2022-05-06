@@ -16,20 +16,21 @@ $border: 12px solid;
   padding: 0;
   box-sizing: border-box;
 }
-@mixin icons ($bg, $afterColor) {
+@mixin icons($bg, $afterColor) {
   background: $bg;
   position: relative;
+  //z-index: 3;
   &::after {
     content: "";
-    width: 95%;
-    height: 95%;
+    width: 97%;
+    height: 97%;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     border-radius: 50%;
     background: $afterColor;
-    transform: translateY(5px);
+    transform: translateY(6px);
     margin: auto;
     z-index: -1;
   }
@@ -37,7 +38,7 @@ $border: 12px solid;
 body {
   background: $RadialGradient;
   font-family: "Barlow Semi Condensed", sans-serif;
-  margin: 20px;
+  padding: 20px;
   color: #fff;
   //overflow-y: hidden;
   //overflow-x: hidden;
@@ -49,6 +50,7 @@ body {
     margin: 0 auto !important;
     height: -webkit-fill-available;
     max-width: 800px;
+    min-width: 335px;
     header {
       border: 3px solid $HeaderOutline;
       border-radius: 10px;
@@ -108,23 +110,38 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 110px;
+            height: 160px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            box-shadow: 1px -7px 0 5px rgba(119, 119, 119, 0.288);
+            z-index: 2;
+            transform: translateY(6px);
+            overflow: hidden;
+          }
         }
       }
       .sc-box {
         // background: ;
-        @include icons($ScissorsGradient,rgb(211, 143, 18) )
+        @include icons($ScissorsGradient, rgb(211, 143, 18));
       }
       .sp-box {
-        @include icons($SpockGradient,hsl(189, 53%, 48%) )
+        @include icons($SpockGradient, hsl(189, 50%, 43%));
       }
       .p-box {
-        @include icons($PaperGradient,hsl(230, 65%, 54%) )
+        @include icons($PaperGradient, hsl(230, 56%, 47%));
       }
       .l-box {
-        @include icons($LizardGradient,hsl(261, 56%, 53%) )
+        @include icons($LizardGradient, hsl(261, 48%, 48%));
       }
       .r-box {
-        @include icons($RockGradient,hsl(349, 68%, 43%) )
+        @include icons($RockGradient, hsl(349, 66%, 37%));
       }
     }
     section.choose {
@@ -195,7 +212,6 @@ body {
     section.choice {
       display: flex;
       justify-content: space-between;
-      //align-items: center;
       padding: 0 20px;
       .you-box,
       .comp-box {
@@ -211,9 +227,14 @@ body {
           position: relative;
           top: 0;
         }
-      }
+      }/*
+      .you-box{
+        .picked{
+         // padding: 0 9.5px;
+        }
+      }*/
       .ring {
-        animation: rings 1.2s ease-in-out infinite;
+        animation: rings 1.4s ease-in infinite;
       }
       .you,
       .computer {
@@ -232,6 +253,7 @@ body {
         width: max-content;
         text-transform: uppercase;
         margin: auto 10px;
+        text-align: center;
         span,
         button {
           display: block;
@@ -265,14 +287,18 @@ body {
     }
     footer {
       //position: relative;
+      /*
+        right: 0px;*/
+      position: relative;
+      bottom: 0px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 70px;
       .footer-text-box {
         border: 3px solid $HeaderOutline;
         border-radius: 7px;
         padding: 5px;
         width: max-content;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
 
         padding: 7px 45px;
         .text {
@@ -326,7 +352,7 @@ body {
       }
     }
   }
-}
+} /*
 @keyframes rings {
   0% {
     box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
@@ -336,6 +362,63 @@ body {
 
   100% {
     box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 80px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 130px rgba(255, 255, 255, 0.01);
+  }*/
+@keyframes rings {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  } /*
+  10% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }
+  20% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }*/
+  30% {
+    box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.01);
+  } /*
+  40% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }*/
+  60% {
+    box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 80px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 80px rgba(255, 255, 255, 0.01);
+  } /*
+  70% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }
+  80% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }
+  90% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
+  }*/
+
+  100% {
+    box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
       0px 0px 0px 80px rgba(255, 255, 255, 0.025),
       0px 0px 0px 130px rgba(255, 255, 255, 0.01);
   }
