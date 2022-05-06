@@ -16,6 +16,24 @@ $border: 12px solid;
   padding: 0;
   box-sizing: border-box;
 }
+@mixin icons ($bg, $afterColor) {
+  background: $bg;
+  position: relative;
+  &::after {
+    content: "";
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background: $afterColor;
+    transform: translateY(5px);
+    margin: auto;
+    z-index: -1;
+  }
+}
 body {
   background: $RadialGradient;
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -94,19 +112,19 @@ body {
       }
       .sc-box {
         // background: ;
-        background: $ScissorsGradient;
+        @include icons($ScissorsGradient,rgb(211, 143, 18) )
       }
       .sp-box {
-        background: $SpockGradient;
+        @include icons($SpockGradient,hsl(189, 53%, 48%) )
       }
       .p-box {
-        background: $PaperGradient;
+        @include icons($PaperGradient,hsl(230, 65%, 54%) )
       }
       .l-box {
-        background: $LizardGradient;
+        @include icons($LizardGradient,hsl(261, 56%, 53%) )
       }
       .r-box {
-        background: $RockGradient;
+        @include icons($RockGradient,hsl(349, 68%, 43%) )
       }
     }
     section.choose {
@@ -116,6 +134,9 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      .pentagon {
+        z-index: -1000;
+      }
       .icons {
         position: absolute;
         top: -200px;
@@ -191,10 +212,8 @@ body {
           top: 0;
         }
       }
-      .ring{
-        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
-       // box-shadow:rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px ;
-        // animation:  r2 1s  infinite,r1 1s  infinite,r3 1s 2s infinite;
+      .ring {
+        animation: rings 1.2s ease-in-out infinite;
       }
       .you,
       .computer {
@@ -203,7 +222,7 @@ body {
         width: max-content;
         margin: auto;
       }
-      .temp{
+      .temp {
         width: 114px;
         height: 114px;
         border-radius: 50%;
@@ -308,33 +327,16 @@ body {
     }
   }
 }
-@keyframes r1 {
-  from {
-    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04);
-    box-shadow: 0px 0px 0px 0px rgb(250, 4, 4);
+@keyframes rings {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
   }
-  to {
-    //box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04);
-    box-shadow: 0px 0px 0px 40px rgba(247, 3, 3, 0.952);
-  }
-}
-@keyframes r2 {
-  from {
-    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.025);
-    box-shadow: 0px 0px 0px 0px rgba(94, 255, 0, 0.966);
-  }
-  to {
-    //box-shadow: 0px 0px 0px 80px rgba(255, 255, 255, 0.025);
-    box-shadow: 0px 0px 0px 80px rgb(24, 250, 3);
-  }
-}
-@keyframes r3 {
-  from {
-    //box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-    box-shadow: 0px 0px 0px 0px rgb(243, 1, 252);
-  }
-  to {
-    //box-shadow: 0px 0px 0px 120px rgba(255, 255, 255, 0.01);
-    box-shadow: 0px 0px 0px 120px rgba(247, 0, 255, 0.096);
+
+  100% {
+    box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.04),
+      0px 0px 0px 80px rgba(255, 255, 255, 0.025),
+      0px 0px 0px 130px rgba(255, 255, 255, 0.01);
   }
 }

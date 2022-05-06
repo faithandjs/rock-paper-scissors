@@ -161,32 +161,30 @@ function Choice() {
     setYourChoice(svgSetter(choices.you));
     setTimeout(() => {
       setComputerChoice(svgSetter(choices.computer));
-      document.querySelector('.computer')?.classList.remove('temp')
+      document.querySelector(".computer")?.classList.remove("temp");
       check(choices.you, choices.computer);
+      setStatusSet(true);
     }, 1500);
   }, [choices]);
+
   useEffect(() => {
-    setTimeout(() => {
-      setStatusSet(true);
-     switch (stat) {
-       case status.WIN:
-         document.querySelector('.you .box')?.classList.add('ring')
-         break;
-       case status.LOSE:
-         document.querySelector('.computer .box')?.classList.add('ring')
-         break;
-       case status.DRAW:
-         document.querySelector('.you .box')?.classList.add('ring')
-         document.querySelector('.computer .box')?.classList.add('ring')
-         break;
-     
-       default:
-         break;
-     }
-      
-      console.log(statusSet);
-    }, 2000);
+    switch (stat) {
+      case status.WIN:
+        document.querySelector(".you .box")?.classList.add("ring");
+        break;
+      case status.LOSE:
+        document.querySelector(".computer .box")?.classList.add("ring");
+        break;
+      case status.DRAW:
+        document.querySelector(".you .box")?.classList.add("ring");
+        document.querySelector(".computer .box")?.classList.add("ring");
+        break;
+
+      default:
+        break;
+    }
   }, [statusSet]);
+
   useEffect(() => {
     if (stat !== null && statusSet) {
       compute(stat);
@@ -198,7 +196,7 @@ function Choice() {
       <div className="you-box">
         <div className="picked">you picked</div>
 
-        <div className='you'>{yourChoice}</div>
+        <div className="you">{yourChoice}</div>
       </div>
       {statusSet && (
         <div className="reset">
@@ -216,7 +214,7 @@ function Choice() {
       <div className="comp-box">
         <div className="picked">the house picked</div>
 
-        <div className='computer  temp'>{computerChoice}</div>
+        <div className="computer  temp">{computerChoice}</div>
       </div>
     </section>
   );

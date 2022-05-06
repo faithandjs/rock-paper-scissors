@@ -9,14 +9,21 @@ import { choices, options, contextType, status } from "./type";
 export const Wrapper = createContext<contextType | null>(null);
 const { Provider } = Wrapper;
 function Home() {
+  //const [data, setData] = useState(localStorage.getItem('rpsls-choices')? JSON.parse(localStorage.getItem('rpsls-choices')): require('./data.json'))
+
   const [choices, setChoices] = useState<choices>({
-    you: 0,
-    computer: 0,
-  });
+          you: 0,
+          computer: 0,
+        }
+  );
   const [chooseScreen, setChoose] = useState(true);
   const [choiceScreen, setChoice] = useState(false);
-  const [score, setScore] = useState<number>(0);
-  console.log(choices);
+  const [score, setScore] = useState<number>(
+    localStorage.getItem("rpsls-score")
+      ? JSON.parse(localStorage.getItem("rpsls-score")!)
+      : 0);
+  localStorage.setItem("rpsls-score", JSON.stringify(score));
+  console.log(choices, score);
 
   const settingChoices = (num: options) => {
     let comp = Math.round(Math.random() * 5);
@@ -33,7 +40,6 @@ function Home() {
     setChoose(true);
   };
   const compute = (action: status) => {
-    console.log(action);
     switch (action) {
       case status.WIN:
         setScore(score + 1);
@@ -48,10 +54,8 @@ function Home() {
     const rule = document.querySelector(".box-box")?.classList;
     if (rule?.contains("none")) {
       rule.remove("none");
-      console.log("remove");
     } else {
       rule?.add("none");
-      console.log("add");
     }
   };
   const value = useMemo(
