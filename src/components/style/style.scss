@@ -40,17 +40,10 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
   padding: 20px;
   color: #fff;
-  //overflow-y: hidden;
-  //overflow-x: hidden;
-  /*height: 92vh;
-  #root {
-    height: -webkit-fill-available;
-  }*/
   .home {
     margin: 0 auto !important;
     height: -webkit-fill-available;
     max-width: 800px;
-    //min-width: 335px;
     header {
       border: 3px solid $HeaderOutline;
       border-radius: 10px;
@@ -59,17 +52,18 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      svg {
-      }
       div {
         width: max-content;
         height: -webkit-fill-available;
+        height: 100%;
         background-color: #fff;
         border-radius: 10px;
         padding: 10px 40px;
         span {
           display: block;
-          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .score {
           color: $ScoreText;
@@ -120,7 +114,8 @@ body {
             border-radius: 50%;
             position: absolute;
             top: 0;
-            box-shadow: 1px -7px 0 5px rgba(119, 119, 119, 0.288);
+            box-shadow: 1px -1px 0px 5px rgba(209, 209, 209, 0.5),
+              1px -3px 0px 5px rgba(209, 209, 209, 0.7);
             z-index: 2;
             transform: translateY(6px);
             overflow: hidden;
@@ -282,13 +277,11 @@ body {
     }
     footer {
       //position: relative;
-      /*
-        right: 0px;*/
-      position: relative;
       bottom: 0px;
       display: flex;
       justify-content: flex-end;
       margin-top: 70px;
+      //overflow: auto;
       .footer-text-box {
         border: 3px solid $HeaderOutline;
         border-radius: 7px;
@@ -306,11 +299,13 @@ body {
       .box-box {
         display: block;
         position: absolute;
+        z-index: 1000;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         background: rgba($color: #000000, $alpha: 0.6);
+        background-attachment: fixed;
         .rules-box {
           padding: 25px 15px 30px;
           display: block;
@@ -331,8 +326,6 @@ body {
               text-transform: uppercase;
               font-weight: 700;
               font-size: 29px;
-            }
-            .x {
             }
           }
           .rules-svg {
