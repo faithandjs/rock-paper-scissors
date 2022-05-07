@@ -173,29 +173,7 @@
 }
 @media screen and (max-width: 425px) {
   body .home {
-    /* header {
-      height: 115px;
-      margin-bottom: 40px;
-      padding: 5px;
-      svg {
-        position: relative;
-        left: -12px;
-        transform: scale(0.8);
-      }
-      div {
-        height: -webkit-fill-available;
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 10px 30px;
-        .score {
-          font-size: 16px;
-        }
-        .number {
-          font-size: 45px;
-        }
-      }
-    }*/
-    section {
+   section {
       .sc-box,
       .sp-box,
       .p-box,
@@ -231,6 +209,7 @@
       }
     }
     section.choose {
+      height: 316px;
       .pentagon {
         svg {
           transform: scale(0.7);
