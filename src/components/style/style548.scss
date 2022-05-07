@@ -7,11 +7,12 @@
       svg {
         position: relative;
         left: -12px;
-        transform: scale(0.8);
         -webkit-transform: scale(0.8);
+        transform: scale(0.8);
       }
       div {
-        height: -webkit-fill-available;
+        //height: -webkit-fill-available;
+        height: 100%;
         background-color: #fff;
         border-radius: 10px;
         padding: 10px 30px;
@@ -41,8 +42,8 @@
             transform: scale(0.7);
           }
           &::before {
-            transform: translateY(5px);
             -webkit-transform: translateY(5px);
+            transform: translateY(5px);
           }
         }
       }
@@ -50,8 +51,8 @@
     section.choose {
       .pentagon {
         svg {
-          transform: scale(0.8);
           -webkit-transform: scale(0.8);
+          transform: scale(0.8);
         }
       }
       .icons {
@@ -218,14 +219,14 @@
 
             /* 
             box-shadow: 1px -1px 0px 5px rgba(209, 209, 209, 0.5),
-              1px -3px 0px 5px rgba(209, 209, 209, 0.7);*/
+              1px -3px 0px 5px rgba(209, 209, 209, 0.7);
             transform: translateY(4px);
-            -webkit-transform: translateY(4px);
+            -webkit-transform: translateY(4px);*/
           }
         }
-        &::after {
-          transform: translateY(4px);
+        &::after,  &::before {
           -webkit-transform: translateY(4px);
+          transform: translateY(4px);
         }
       }
     }
@@ -321,8 +322,8 @@
           height: 100%;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%);
           -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
           border-radius: 0;
           position: relative;
           .rules {
@@ -338,16 +339,16 @@
               bottom: 55px;
               display: block;
               left: 50%;
-              transform: translateX(-50%);
               -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
             }
           }
           .rules-svg {
             height: -webkit-fill-available;
             padding-bottom: 135px;
             svg {
-              transform: scale(0.9);
               -webkit-transform: scale(0.9);
+              transform: scale(0.9);
               
             display: flex;
             justify-content: center;
@@ -366,8 +367,8 @@
       .rules-box {
         .rules-svg {
           svg {
-            transform: scale(0.7) !important;
             -webkit-transform: scale(0.7) !important;
+            transform: scale(0.7) !important;
           }
         }
       }
