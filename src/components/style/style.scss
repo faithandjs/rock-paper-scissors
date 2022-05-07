@@ -31,6 +31,7 @@ $border: 12px solid;
     border-radius: 50%;
     background: $afterColor;
     transform: translateY(6px);
+    -webkit-transform: translateY(6px);
     margin: auto;
     z-index: -1;
   }
@@ -118,6 +119,7 @@ body {
               1px -3px 0px 5px rgba(209, 209, 209, 0.7);
             z-index: 2;
             transform: translateY(6px);
+            -webkit-transform: translateY(6px);
             overflow: hidden;
           }
         }
@@ -315,6 +317,7 @@ body {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
           border-radius: 8px;
 
           .rules {

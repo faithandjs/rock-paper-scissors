@@ -8,6 +8,7 @@
         position: relative;
         left: -12px;
         transform: scale(0.8);
+        -webkit-transform: scale(0.8);
       }
       div {
         height: -webkit-fill-available;
@@ -36,10 +37,12 @@
           width: 70px;
           height: 70px;
           svg {
+            -webkit-transform: scale(0.7);
             transform: scale(0.7);
           }
           &::before {
             transform: translateY(5px);
+            -webkit-transform: translateY(5px);
           }
         }
       }
@@ -48,6 +51,7 @@
       .pentagon {
         svg {
           transform: scale(0.8);
+          -webkit-transform: scale(0.8);
         }
       }
       .icons {
@@ -205,6 +209,7 @@
           height: 60px;
           svg {
             transform: scale(0.6);
+            -webkit-transform: scale(0.6);
           }
           &::before {
             width: 90px;
@@ -215,10 +220,12 @@
             box-shadow: 1px -1px 0px 5px rgba(209, 209, 209, 0.5),
               1px -3px 0px 5px rgba(209, 209, 209, 0.7);*/
             transform: translateY(4px);
+            -webkit-transform: translateY(4px);
           }
         }
         &::after {
           transform: translateY(4px);
+          -webkit-transform: translateY(4px);
         }
       }
     }
@@ -315,6 +322,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
           border-radius: 0;
           position: relative;
           .rules {
@@ -331,6 +339,7 @@
               display: block;
               left: 50%;
               transform: translateX(-50%);
+              -webkit-transform: translateX(-50%);
             }
           }
           .rules-svg {
@@ -338,6 +347,7 @@
             padding-bottom: 135px;
             svg {
               transform: scale(0.9);
+              -webkit-transform: scale(0.9);
               
             display: flex;
             justify-content: center;
@@ -357,6 +367,7 @@
         .rules-svg {
           svg {
             transform: scale(0.7) !important;
+            -webkit-transform: scale(0.7) !important;
           }
         }
       }
