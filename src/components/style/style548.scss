@@ -209,8 +209,11 @@
       }
     }
     section.choose {
-      height: 316px;
+      height: 300px;
+      width: 100%;
       .pentagon {
+        z-index: -1;
+        height: auto;
         svg {
           transform: scale(0.7);
         }
