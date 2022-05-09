@@ -187,19 +187,12 @@
           width: 60px;
           height: 60px;
           svg {
-            transform: scale(0.6);
-            -webkit-transform: scale(0.6);
+            //transform: scale(0.3);
+           // -webkit-transform: scale(0.3);
           }
           &::before {
             width: 90px;
             height: 140px;
-            //box-shadow: 1px -7px 0 5px rgba(119, 119, 119, 0.288);
-
-            /* 
-            box-shadow: 1px -1px 0px 5px rgba(209, 209, 209, 0.5),
-              1px -3px 0px 5px rgba(209, 209, 209, 0.7);
-            transform: translateY(4px);
-            -webkit-transform: translateY(4px);*/
           }
         }
         &::after,  &::before {
@@ -212,7 +205,7 @@
       height: 300px;
       width: 100%;
       .pentagon {
-        z-index: -1;
+       // z-index: -1;
         height: auto;
         svg {
           transform: scale(0.7);
@@ -220,6 +213,7 @@
       }
       .icons {
         .sc-box {
+         // transform: scale(0.9);
           top: 196px;
           // left: 10px;
         }
@@ -232,6 +226,7 @@
           left: 110px;
         }
         .l-box {
+          transform: scale(0.8);
           left: -80px;
           top: 145px;
         }

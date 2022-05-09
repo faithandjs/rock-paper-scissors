@@ -108,7 +108,9 @@ body {
           justify-content: center;
           overflow: hidden;
           position: relative;
-
+          svg{
+            transform: scale(0.9);
+          }
           &::before {
             content: "";
             width: 110px;
