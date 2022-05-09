@@ -155,13 +155,17 @@
         position: absolute;
         top: 183px !important;
         margin-top: 30px !important;
-
+        width: 100%;
         .status {
           font-size: 30px !important;
+          margin: auto;
         }
         button {
           font-size: 10px !important;
           font-weight: 700;
+          width: max-content;
+          margin: auto;
+          padding: 10px 20px;
         }
       }
     }
@@ -173,13 +177,14 @@
 }
 @media screen and (max-width: 425px) {
   body .home {
-   section {
+    section {
       .sc-box,
       .sp-box,
       .p-box,
       .l-box,
       .r-box {
-        .scissors,
+        transform: scale(0.8);
+        /*   .scissors,
         .spock,
         .lizard,
         .paper,
@@ -198,14 +203,14 @@
         &::after,  &::before {
           -webkit-transform: translateY(4px);
           transform: translateY(4px);
-        }
+        }*/
       }
     }
     section.choose {
       height: 300px;
       width: 100%;
       .pentagon {
-       // z-index: -1;
+        // z-index: -1;
         height: auto;
         svg {
           transform: scale(0.7);
@@ -213,7 +218,7 @@
       }
       .icons {
         .sc-box {
-         // transform: scale(0.9);
+          // transform: scale(0.9);
           top: 196px;
           // left: 10px;
         }
@@ -226,7 +231,7 @@
           left: 110px;
         }
         .l-box {
-          transform: scale(0.8);
+          // transform: scale(0.8);
           left: -80px;
           top: 145px;
         }
@@ -241,7 +246,6 @@
       padding: 0;
       //justify-content: space-between;
       position: relative;
-      align-items: center;
       margin-bottom: 170px;
       .you-box,
       .comp-box {
@@ -259,10 +263,14 @@
         transform: translateY(100%);
       }
       .temp {
+        /*transform: scale(0.8);
         width: 94px;
-        height: 94px;
+        height: 94px;*/
+        width: 75.2px !important;
+        height: 75.2px !important;
         border-radius: 50%;
-        bottom: -103px;
+        // bottom: -103px;
+        bottom: 0;
       }
 
       .ring {
@@ -271,10 +279,10 @@
       .reset {
         /* display: flex;
         justify-content: space-around;
-        align-items: center;*/
+        align-items: center;
         position: absolute;
         top: 123px;
-        margin-top: 30px !important;
+        margin-top: 30px !important;*/
         .status {
           font-size: 40px;
         }
@@ -326,10 +334,10 @@
             svg {
               -webkit-transform: scale(0.9);
               transform: scale(0.9);
-              
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
           }
         }
