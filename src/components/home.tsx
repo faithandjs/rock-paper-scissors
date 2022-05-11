@@ -12,16 +12,16 @@ function Home() {
   //const [data, setData] = useState(localStorage.getItem('rpsls-choices')? JSON.parse(localStorage.getItem('rpsls-choices')): require('./data.json'))
 
   const [choices, setChoices] = useState<choices>({
-          you: 0,
-          computer: 0,
-        }
-  );
+    you: 0,
+    computer: 0,
+  });
   const [chooseScreen, setChoose] = useState(true);
   const [choiceScreen, setChoice] = useState(false);
   const [score, setScore] = useState<number>(
     localStorage.getItem("rpsls-score")
       ? JSON.parse(localStorage.getItem("rpsls-score")!)
-      : 0);
+      : 0
+  );
   localStorage.setItem("rpsls-score", JSON.stringify(score));
   console.log(choices, score);
 

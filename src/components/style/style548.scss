@@ -183,27 +183,24 @@
       .p-box,
       .l-box,
       .r-box {
-        transform: scale(0.8);
-        /*   .scissors,
+       padding: 5px;
+        .scissors,
         .spock,
         .lizard,
         .paper,
         .rock {
-          width: 60px;
-          height: 60px;
-          svg {
-            //transform: scale(0.3);
-           // -webkit-transform: scale(0.3);
-          }
+          transform: scale(0.8);
+          //svg {}
           &::before {
             width: 90px;
             height: 140px;
           }
         }
-        &::after,  &::before {
+        &::after,
+        &::before {
           -webkit-transform: translateY(4px);
           transform: translateY(4px);
-        }*/
+        }
       }
     }
     section.choose {
@@ -223,20 +220,19 @@
           // left: 10px;
         }
         .sp-box {
-          top: 180px;
-          left: -110px;
+          top: 195px;
+          left: -100px;
         }
         .p-box {
-          top: 96px;
-          left: 110px;
+          top: 115px;
+          left: 100px;
         }
         .l-box {
-          // transform: scale(0.8);
           left: -80px;
-          top: 145px;
+          top: 155px;
         }
         .r-box {
-          top: 61px;
+          top: 75px;
           left: 80px;
         }
       }
@@ -244,7 +240,6 @@
 
     section.choice {
       padding: 0;
-      //justify-content: space-between;
       position: relative;
       margin-bottom: 170px;
       .you-box,
@@ -263,11 +258,8 @@
         transform: translateY(100%);
       }
       .temp {
-        /*transform: scale(0.8);
         width: 94px;
-        height: 94px;*/
-        width: 75.2px !important;
-        height: 75.2px !important;
+        height: 94px;
         border-radius: 50%;
         // bottom: -103px;
         bottom: 0;
@@ -277,12 +269,6 @@
         animation: rings2 1.4s ease-in infinite;
       }
       .reset {
-        /* display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: absolute;
-        top: 123px;
-        margin-top: 30px !important;*/
         .status {
           font-size: 40px;
         }
@@ -360,8 +346,8 @@
     }
   }
 }
-//height
 @media screen and (min-height: 670px) {
+  
 }
 @keyframes rings1 {
   0% {
