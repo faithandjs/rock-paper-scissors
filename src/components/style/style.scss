@@ -284,6 +284,7 @@ body {
     }
     footer {
       bottom: 0px;
+      margin-bottom: 30px;
       display: flex;
       justify-content: flex-end;
       margin-top: 70px;
@@ -302,7 +303,7 @@ body {
       }
       .box-box {
         display: block;
-        position: absolute;
+        position: fixed;
         z-index: 1000;
         top: 0;
         bottom: 0;

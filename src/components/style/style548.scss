@@ -269,6 +269,7 @@
         animation: rings2 1.4s ease-in infinite;
       }
       .reset {
+        margin: auto;
         .status {
           font-size: 40px;
         }
@@ -278,7 +279,7 @@
       }
     }
     footer {
-      margin-top: 20px;
+     // margin-top: 20px;
       .box-box {
         display: block;
         position: fixed;
