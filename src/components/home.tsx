@@ -136,8 +136,8 @@ function Home() {
               <div className="rules-svg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="340"
-                  height="330"
+                  // width="340"
+                  // height="330"
                 >
                   <defs>
                     <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">

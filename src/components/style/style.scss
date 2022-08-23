@@ -108,7 +108,7 @@ body {
           justify-content: center;
           overflow: hidden;
           position: relative;
-          svg{
+          svg {
             transform: scale(0.9);
           }
           &::before {
@@ -283,17 +283,16 @@ body {
       }
     }
     footer {
-      bottom: 0px;
-      margin-bottom: 30px;
+      position: relative;
+      bottom: -20px;
       display: flex;
       justify-content: flex-end;
-      margin-top: 70px;
+      margin: 70px 0 20px;
       .footer-text-box {
         border: 3px solid $HeaderOutline;
         border-radius: 7px;
         padding: 5px;
         width: max-content;
-
         padding: 7px 45px;
         .text {
           font-size: 20px;
@@ -312,6 +311,7 @@ body {
         background: rgba($color: #000000, $alpha: 0.6);
         background-attachment: fixed;
         .rules-box {
+          min-width: 340px;
           padding: 25px 15px 30px;
           display: block;
           background-color: #fff;
@@ -333,11 +333,23 @@ body {
               font-weight: 700;
               font-size: 29px;
             }
+            .x {
+              z-index: 1;
+            }
           }
           .rules-svg {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            svg {
+              width: 340px;
+              height: 330px;
+              path {
+                // position: relative;
+                // left: -10px;
+              }
+            }
           }
         }
         &.none {
@@ -352,53 +364,17 @@ body {
     box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
       0px 0px 0px 0px rgba(255, 255, 255, 0.025),
       0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-  } /*
-  10% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
   }
-  20% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-  }*/
   30% {
     box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
       0px 0px 0px 40px rgba(255, 255, 255, 0.025),
       0px 0px 0px 40px rgba(255, 255, 255, 0.01);
-  } /*
-  40% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
   }
-  50% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-  }*/
   60% {
     box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
       0px 0px 0px 80px rgba(255, 255, 255, 0.025),
       0px 0px 0px 80px rgba(255, 255, 255, 0.01);
-  } /*
-  70% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
   }
-  80% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-  }
-  90% {
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.04),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.025),
-      0px 0px 0px 0px rgba(255, 255, 255, 0.01);
-  }*/
-
   100% {
     box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.04),
       0px 0px 0px 80px rgba(255, 255, 255, 0.025),

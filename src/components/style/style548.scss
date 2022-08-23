@@ -1,4 +1,4 @@
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 768px) {
   body .home {
     header {
       height: 115px;
@@ -11,7 +11,6 @@
         transform: scale(0.8);
       }
       div {
-        //height: -webkit-fill-available;
         height: 100%;
         background-color: #fff;
         border-radius: 10px;
@@ -58,7 +57,6 @@
       .icons {
         .sc-box {
           top: 180px;
-          // left: 10px;
         }
         .sp-box {
           top: 180px;
@@ -78,55 +76,7 @@
         }
       }
     }
-    /*
     section.choice {
-      display: grid;
-      grid-template-areas:
-        "you . comp"
-        ". resets .";
-      padding: 0 20px;
-      align-items: center;
-      .you-box {
-        grid-area: you;
-      }
-      .comp-box {
-        grid-area: comp;
-      }
-      .reset {
-      }
-      .you-box,
-      .comp-box {
-        .picked {
-          top: unset;
-          font-size: 16px;
-          bottom: -163px;
-          white-space: nowrap;
-          //margin-bottom: unset;
-        }
-      }
-      .you,
-      .computer {
-        top: -163px;
-        transform: translateY(100%);
-      }
-      .temp {
-        width: 94px;
-        height: 94px;
-        border-radius: 50%;
-      }
-      .reset {
-        grid-area: resets;
-        margin-top: 30px !important;
-        .status {
-          font-size: 40px;
-        }
-        button {
-          font-size: 15px;
-        }
-      }
-    }*/
-    section.choice {
-      // height: max-content;
       margin-bottom: 150px;
       display: flex;
       justify-content: space-around;
@@ -190,7 +140,6 @@
         .paper,
         .rock {
           transform: scale(0.8);
-          //svg {}
           &::before {
             width: 90px;
             height: 140px;
@@ -207,7 +156,6 @@
       height: 300px;
       width: 100%;
       .pentagon {
-        // z-index: -1;
         height: auto;
         svg {
           transform: scale(0.7);
@@ -215,9 +163,7 @@
       }
       .icons {
         .sc-box {
-          // transform: scale(0.9);
           top: 196px;
-          // left: 10px;
         }
         .sp-box {
           top: 195px;
@@ -261,7 +207,6 @@
         width: 94px;
         height: 94px;
         border-radius: 50%;
-        // bottom: -103px;
         bottom: 0;
       }
 
@@ -279,7 +224,6 @@
       }
     }
     footer {
-     // margin-top: 20px;
       .box-box {
         display: block;
         position: fixed;
@@ -322,9 +266,9 @@
               -webkit-transform: scale(0.9);
               transform: scale(0.9);
 
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              // display: flex;
+              // justify-content: center;
+              // align-items: center;
             }
           }
         }
@@ -338,9 +282,9 @@
     .box-box {
       .rules-box {
         .rules-svg {
-          svg {
             -webkit-transform: scale(0.7) !important;
             transform: scale(0.7) !important;
+          svg {
           }
         }
       }
